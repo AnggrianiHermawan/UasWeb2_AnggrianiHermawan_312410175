@@ -1,0 +1,210 @@
+ERROR - 2026-06-23 14:03:33 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\WEB2\backend-api\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\WEB2\backend-api\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'db_inventory_ci...', 3306, '', 0)
+#1 C:\xampp\htdocs\WEB2\backend-api\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\WEB2\backend-api\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\WEB2\backend-api\system\Database\BaseBuilder.php(2343): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ba...', Array, false)
+#4 C:\xampp\htdocs\WEB2\backend-api\system\Model.php(357): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\WEB2\backend-api\system\BaseModel.php(899): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\WEB2\backend-api\system\Model.php(670): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\WEB2\backend-api\app\Controllers\Barang.php(36): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\WEB2\backend-api\system\CodeIgniter.php(974): App\Controllers\Barang->create()
+#9 C:\xampp\htdocs\WEB2\backend-api\system\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#10 C:\xampp\htdocs\WEB2\backend-api\system\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\WEB2\backend-api\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\WEB2\backend-api\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\WEB2\backend-api\public\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\WEB2\backend-api\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\WEB2\backend-api\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\WEB2\backend-api\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\WEB2\backend-api\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\WEB2\backend-api\system\Database\BaseBuilder.php(2343): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ba...', Array, false)
+#3 C:\xampp\htdocs\WEB2\backend-api\system\Model.php(357): CodeIgniter\Database\BaseBuilder->insert()
+#4 C:\xampp\htdocs\WEB2\backend-api\system\BaseModel.php(899): CodeIgniter\Model->doInsert(Array)
+#5 C:\xampp\htdocs\WEB2\backend-api\system\Model.php(670): CodeIgniter\BaseModel->insert(Array, true)
+#6 C:\xampp\htdocs\WEB2\backend-api\app\Controllers\Barang.php(36): CodeIgniter\Model->insert(Array)
+#7 C:\xampp\htdocs\WEB2\backend-api\system\CodeIgniter.php(974): App\Controllers\Barang->create()
+#8 C:\xampp\htdocs\WEB2\backend-api\system\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#9 C:\xampp\htdocs\WEB2\backend-api\system\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\WEB2\backend-api\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\WEB2\backend-api\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\WEB2\backend-api\public\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\WEB2\backend-api\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2026-06-23 14:03:33 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: POST, Route: barang]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(2343): CodeIgniter\Database\BaseConnection->query('INSERT INTO `barang` (`nama_barang`, `stok`, `harga`, `kategori_id`) VALUES (:nama_barang:, :stok:, :harga:, :kategori_id:)', [...], false)
+ 3 SYSTEMPATH\Model.php(357): CodeIgniter\Database\BaseBuilder->insert()
+ 4 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 5 SYSTEMPATH\Model.php(670): CodeIgniter\BaseModel->insert([...], true)
+ 6 APPPATH\Controllers\Barang.php(36): CodeIgniter\Model->insert([...])
+ 7 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Barang->create()
+ 8 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+ 9 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\WEB2\\backend-api\\public\\index.php')
+ERROR - 2026-06-23 14:03:47 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\WEB2\backend-api\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\WEB2\backend-api\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'db_inventory_ci...', 3306, '', 0)
+#1 C:\xampp\htdocs\WEB2\backend-api\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\WEB2\backend-api\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\WEB2\backend-api\system\Database\BaseBuilder.php(2343): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ba...', Array, false)
+#4 C:\xampp\htdocs\WEB2\backend-api\system\Model.php(357): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\WEB2\backend-api\system\BaseModel.php(899): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\WEB2\backend-api\system\Model.php(670): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\WEB2\backend-api\app\Controllers\Barang.php(36): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\WEB2\backend-api\system\CodeIgniter.php(974): App\Controllers\Barang->create()
+#9 C:\xampp\htdocs\WEB2\backend-api\system\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#10 C:\xampp\htdocs\WEB2\backend-api\system\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\WEB2\backend-api\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\WEB2\backend-api\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\WEB2\backend-api\public\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\WEB2\backend-api\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\WEB2\backend-api\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\WEB2\backend-api\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\WEB2\backend-api\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\WEB2\backend-api\system\Database\BaseBuilder.php(2343): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ba...', Array, false)
+#3 C:\xampp\htdocs\WEB2\backend-api\system\Model.php(357): CodeIgniter\Database\BaseBuilder->insert()
+#4 C:\xampp\htdocs\WEB2\backend-api\system\BaseModel.php(899): CodeIgniter\Model->doInsert(Array)
+#5 C:\xampp\htdocs\WEB2\backend-api\system\Model.php(670): CodeIgniter\BaseModel->insert(Array, true)
+#6 C:\xampp\htdocs\WEB2\backend-api\app\Controllers\Barang.php(36): CodeIgniter\Model->insert(Array)
+#7 C:\xampp\htdocs\WEB2\backend-api\system\CodeIgniter.php(974): App\Controllers\Barang->create()
+#8 C:\xampp\htdocs\WEB2\backend-api\system\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#9 C:\xampp\htdocs\WEB2\backend-api\system\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\WEB2\backend-api\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\WEB2\backend-api\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\WEB2\backend-api\public\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\WEB2\backend-api\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2026-06-23 14:03:47 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: POST, Route: barang]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(2343): CodeIgniter\Database\BaseConnection->query('INSERT INTO `barang` (`nama_barang`, `stok`, `harga`, `kategori_id`) VALUES (:nama_barang:, :stok:, :harga:, :kategori_id:)', [...], false)
+ 3 SYSTEMPATH\Model.php(357): CodeIgniter\Database\BaseBuilder->insert()
+ 4 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 5 SYSTEMPATH\Model.php(670): CodeIgniter\BaseModel->insert([...], true)
+ 6 APPPATH\Controllers\Barang.php(36): CodeIgniter\Model->insert([...])
+ 7 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Barang->create()
+ 8 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+ 9 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\WEB2\\backend-api\\public\\index.php')
+ERROR - 2026-06-23 14:03:59 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\WEB2\backend-api\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\WEB2\backend-api\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'db_inventory_ci...', 3306, '', 0)
+#1 C:\xampp\htdocs\WEB2\backend-api\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\WEB2\backend-api\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\WEB2\backend-api\system\Database\BaseBuilder.php(1647): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\WEB2\backend-api\system\Model.php(194): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WEB2\backend-api\system\BaseModel.php(615): CodeIgniter\Model->doFind(true, '4')
+#6 C:\xampp\htdocs\WEB2\backend-api\app\Controllers\Barang.php(63): CodeIgniter\BaseModel->find('4')
+#7 C:\xampp\htdocs\WEB2\backend-api\system\CodeIgniter.php(974): App\Controllers\Barang->delete('4')
+#8 C:\xampp\htdocs\WEB2\backend-api\system\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#9 C:\xampp\htdocs\WEB2\backend-api\system\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\WEB2\backend-api\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\WEB2\backend-api\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\WEB2\backend-api\public\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\WEB2\backend-api\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\WEB2\backend-api\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\WEB2\backend-api\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\WEB2\backend-api\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\WEB2\backend-api\system\Database\BaseBuilder.php(1647): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\WEB2\backend-api\system\Model.php(194): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\WEB2\backend-api\system\BaseModel.php(615): CodeIgniter\Model->doFind(true, '4')
+#5 C:\xampp\htdocs\WEB2\backend-api\app\Controllers\Barang.php(63): CodeIgniter\BaseModel->find('4')
+#6 C:\xampp\htdocs\WEB2\backend-api\system\CodeIgniter.php(974): App\Controllers\Barang->delete('4')
+#7 C:\xampp\htdocs\WEB2\backend-api\system\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#8 C:\xampp\htdocs\WEB2\backend-api\system\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\WEB2\backend-api\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\WEB2\backend-api\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\WEB2\backend-api\public\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\WEB2\backend-api\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2026-06-23 14:03:59 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: DELETE, Route: barang/4]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1647): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `barang`
+WHERE `barang`.`id` = :barang.id:', [...], false)
+ 3 SYSTEMPATH\Model.php(194): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(615): CodeIgniter\Model->doFind(true, '4')
+ 5 APPPATH\Controllers\Barang.php(63): CodeIgniter\BaseModel->find('4')
+ 6 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Barang->delete('4')
+ 7 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+ 8 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\WEB2\\backend-api\\public\\index.php')
+ERROR - 2026-06-23 14:04:06 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\WEB2\backend-api\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\WEB2\backend-api\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'db_inventory_ci...', 3306, '', 0)
+#1 C:\xampp\htdocs\WEB2\backend-api\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\WEB2\backend-api\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\WEB2\backend-api\system\Database\BaseBuilder.php(1647): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\WEB2\backend-api\system\Model.php(194): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\WEB2\backend-api\system\BaseModel.php(615): CodeIgniter\Model->doFind(true, '4')
+#6 C:\xampp\htdocs\WEB2\backend-api\app\Controllers\Barang.php(63): CodeIgniter\BaseModel->find('4')
+#7 C:\xampp\htdocs\WEB2\backend-api\system\CodeIgniter.php(974): App\Controllers\Barang->delete('4')
+#8 C:\xampp\htdocs\WEB2\backend-api\system\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#9 C:\xampp\htdocs\WEB2\backend-api\system\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\WEB2\backend-api\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\WEB2\backend-api\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\WEB2\backend-api\public\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\WEB2\backend-api\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\WEB2\backend-api\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\WEB2\backend-api\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\WEB2\backend-api\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\WEB2\backend-api\system\Database\BaseBuilder.php(1647): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\WEB2\backend-api\system\Model.php(194): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\WEB2\backend-api\system\BaseModel.php(615): CodeIgniter\Model->doFind(true, '4')
+#5 C:\xampp\htdocs\WEB2\backend-api\app\Controllers\Barang.php(63): CodeIgniter\BaseModel->find('4')
+#6 C:\xampp\htdocs\WEB2\backend-api\system\CodeIgniter.php(974): App\Controllers\Barang->delete('4')
+#7 C:\xampp\htdocs\WEB2\backend-api\system\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#8 C:\xampp\htdocs\WEB2\backend-api\system\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\WEB2\backend-api\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\WEB2\backend-api\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\WEB2\backend-api\public\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\WEB2\backend-api\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2026-06-23 14:04:06 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: DELETE, Route: barang/4]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1647): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `barang`
+WHERE `barang`.`id` = :barang.id:', [...], false)
+ 3 SYSTEMPATH\Model.php(194): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(615): CodeIgniter\Model->doFind(true, '4')
+ 5 APPPATH\Controllers\Barang.php(63): CodeIgniter\BaseModel->find('4')
+ 6 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Barang->delete('4')
+ 7 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+ 8 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\WEB2\\backend-api\\public\\index.php')
