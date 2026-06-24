@@ -162,7 +162,8 @@ Tidak menggunakan CSS konvensional sama sekali. Seluruh elemen visual, modal pop
   - `(http://127.0.0.1:5500/index.html#/login)`
 
 **Link Video YouTube**  
-  -  
+  -  `(https://youtu.be/r-2ypgU6tBc?si=5F6c6Z3v0KlrccOE)`
+
 
 ---
 
